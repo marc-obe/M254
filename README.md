@@ -1,1 +1,6 @@
 # M151
+
+Benutzer erstellen: </br>
+GRANT SELECT, INSERT, UPDATE, DELETE ON *.* TO `user`@`localhost` IDENTIFIED BY PASSWORD '*3820DB1895C26747A592360B64556C6A70E99815';
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON `projektarbeit`.* TO `user`@`localhost`;
