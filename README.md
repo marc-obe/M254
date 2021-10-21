@@ -1,12 +1,6 @@
 # M151
 ## Aufsetzen der DB
-1. Datenbank "projektarbeit" erstellen
-2. Tabellen aus dem [Projektarbeit.sql](DB/projektarbeit.sql) importieren
-3. Benutzer mit folgenden Brechtigungen erstellen: 
-   * Select
-   * Insert
-   * Update 
-   * Delete
+1. Datenbank aus dem [Projektarbeit.sql](DB/projektarbeit.sql) importieren
 
 ## Aufsetzen Apache
 ### Möglichkeit 1 

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 19. Okt 2021 um 13:11
--- Server-Version: 10.4.20-MariaDB
--- PHP-Version: 8.0.9
+-- Erstellungszeit: 21. Okt 2021 um 17:31
+-- Server-Version: 10.4.21-MariaDB
+-- PHP-Version: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Datenbank: `projektarbeit`
 --
+CREATE DATABASE IF NOT EXISTS `projektarbeit` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `projektarbeit`;
 
 -- --------------------------------------------------------
 
@@ -92,6 +94,10 @@ ALTER TABLE `tbl_witze`
 ALTER TABLE `tbl_witze`
   ADD CONSTRAINT `tbl_witze_ibfk_1` FOREIGN KEY (`benutzerId`) REFERENCES `tbl_benutzer` (`id`);
 COMMIT;
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON *.* TO `user`@`localhost` IDENTIFIED BY PASSWORD '*3820DB1895C26747A592360B64556C6A70E99815';
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON `projektarbeit`.* TO `user`@`localhost`;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
