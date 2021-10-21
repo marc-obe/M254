@@ -1,6 +1,7 @@
 # M151
 ## Aufsetzen der DB
-1. Datenbank aus dem [Projektarbeit.sql](DB/projektarbeit.sql) importieren
+1. MySQL starten und auf [phpMyAdmin](http://localhost/phpmyadmin/index.php) gehen
+2. Datenbank aus dem [Projektarbeit.sql](DB/projektarbeit.sql) importieren
 
 ## Aufsetzen Apache
 ### Möglichkeit 1 
