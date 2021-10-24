@@ -5,5 +5,5 @@ session_start();
 $_SESSION = array();
 session_destroy();
 // TODO - Weiterleiten auf login.php
-header('Location: /index.php');
+header('Location: index.php');
 ?>

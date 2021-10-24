@@ -47,6 +47,7 @@ $error = $message = '';
                 if (isset($_SESSION['loggedin']) and $_SESSION['loggedin']) {
                     echo '<li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>';
                     echo '<li class="nav-item"><a class="nav-link" href="meineWitze.php">Meine Witze</a></li>';
+                    echo '<li class="nav-item"><a class="nav-link" href="passwort.php">Passwort ändern</a></li>';
                 }else {
                     // TODO - wenn Session nicht personalisiert
                     echo '<li class="nav-item"><a class="nav-link" href="register.php">Registrierung</a></li>';

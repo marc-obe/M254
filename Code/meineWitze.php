@@ -45,8 +45,9 @@ if (isset($_SESSION['loggedin']) and $_SESSION['loggedin']) {
 
             <?php
             if (isset($_SESSION['loggedin']) and $_SESSION['loggedin']) {
-                echo '<li class="nav-item"><a class="nav-link" href="indey.php">Home</a></li>';
                 echo '<li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>';
+                echo '<li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>';
+                echo '<li class="nav-item"><a class="nav-link" href="passwort.php">Passwort ändern</a></li>';
             }else {
                 header('Location: /index.php');
             }
@@ -57,7 +58,7 @@ if (isset($_SESSION['loggedin']) and $_SESSION['loggedin']) {
 <div class="container">
     <h1>Meine Witze</h1>
     <div>
-        <a href="bearbeiten.php">Witz hinzufügen</a>
+        <a href="witzHinzufuegen.php">Witz hinzufügen</a>
     </div>
     <?php
     $query = "SELECT id,titel, inhalt from tbl_witze where benutzerId = ?";
