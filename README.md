@@ -13,3 +13,6 @@
    1. DocumentRoot finden 
    2. Den Pfad für den Code Ordener angeben (z.B. "C:/Users/m-obe/IdeaProjects/M151/Code")
 2. Apache starten
+
+## Dokumente
+Unter Dokumente sind die [Projektdokumentation](/Dokumente/ProjektdokumentationSuterOberlin.pdf) und [Testplan, Testprotokoll](/Dokumente/Testplan.xlsx) abgelegt
