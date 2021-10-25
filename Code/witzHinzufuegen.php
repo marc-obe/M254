@@ -107,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 echo '<li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>';
                 echo '<li class="nav-item"><a class="nav-link" href="meineWitze.php">meine Witze</a></li>';
             }else {
-                header('Location: /index.php');
+                header('Location: index.php');
             }
             ?>
         </ul>

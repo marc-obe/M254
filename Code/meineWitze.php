@@ -49,7 +49,7 @@ if (isset($_SESSION['loggedin']) and $_SESSION['loggedin']) {
                 echo '<li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>';
                 echo '<li class="nav-item"><a class="nav-link" href="passwort.php">Passwort ändern</a></li>';
             }else {
-                header('Location: /index.php');
+                header('Location: index.php');
             }
             ?>
         </ul>
@@ -82,7 +82,7 @@ if (isset($_SESSION['loggedin']) and $_SESSION['loggedin']) {
 
     // Userdaten lesen
     while($row = $result->fetch_assoc()) {
-        echo '<h2>'. $row["titel"] .'</h2> <p>'.$row["inhalt"].'</p><a href="bearbeiten.php?id='.$row["id"].'">bearbeiten</a> </BLOCKQUOTE> <a href="löschen.php?id='.$row["id"].'">löschen</a>';
+        echo '<h2>'. $row["titel"] .'</h2> <p>'.$row["inhalt"].'</p><a href="bearbeiten.php?id='.$row["id"].'">bearbeiten</a> </BLOCKQUOTE> <a href="loeschen.php?id='.$row["id"].'">löschen</a>';
     }
 
 

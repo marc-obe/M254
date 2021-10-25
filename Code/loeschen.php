@@ -42,6 +42,6 @@ if (isset($_GET['id']) and is_numeric($_GET['id'])) {
 } else {
     $error .= "Keine Parameter übergeben.<br>";
 }
-header('Location: /meineWitze.php');
+header('Location: meineWitze.php');
 
 

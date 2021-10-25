@@ -135,7 +135,7 @@ if (isset($_GET['id']) and is_numeric($_GET['id'])) {
                 echo '<li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>';
                 echo '<li class="nav-item"><a class="nav-link" href="meineWitze.php">meine Witze</a></li>';
             } else {
-                header('Location: /index.php');
+                header('Location: index.php');
             }
             ?>
         </ul>
