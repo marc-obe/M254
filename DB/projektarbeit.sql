@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 21. Okt 2021 um 17:31
+-- Erstellungszeit: 25. Okt 2021 um 16:19
 -- Server-Version: 10.4.21-MariaDB
 -- PHP-Version: 8.0.11
 
@@ -20,6 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Datenbank: `projektarbeit`
 --
+DROP DATABASE IF EXISTS `projektarbeit`;
 CREATE DATABASE IF NOT EXISTS `projektarbeit` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `projektarbeit`;
 
@@ -38,6 +39,13 @@ CREATE TABLE `tbl_benutzer` (
   `passwort` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Daten für Tabelle `tbl_benutzer`
+--
+
+INSERT INTO `tbl_benutzer` (`id`, `vorname`, `nachname`, `eMail`, `benutzername`, `passwort`) VALUES
+(1, 'Marc', 'Oberlin', 'marc.oberlin@bbzbl-it.ch', 'MarcOb', '$2y$10$sDjz1abLHZiDAyq29ntYKOjZ0TVWxDbysLvb6BTgNIb3.OpgGj9DS');
+
 -- --------------------------------------------------------
 
 --
@@ -50,6 +58,13 @@ CREATE TABLE `tbl_witze` (
   `inhalt` text NOT NULL,
   `benutzerId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Daten für Tabelle `tbl_witze`
+--
+
+INSERT INTO `tbl_witze` (`id`, `titel`, `inhalt`, `benutzerId`) VALUES
+(2, 'Kurzwitz', 'Brennholzverleih', 1);
 
 --
 -- Indizes der exportierten Tabellen
@@ -76,13 +91,13 @@ ALTER TABLE `tbl_witze`
 -- AUTO_INCREMENT für Tabelle `tbl_benutzer`
 --
 ALTER TABLE `tbl_benutzer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT für Tabelle `tbl_witze`
 --
 ALTER TABLE `tbl_witze`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints der exportierten Tabellen
