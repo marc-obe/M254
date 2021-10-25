@@ -15,4 +15,4 @@
 2. Apache starten
 
 ## Dokumente
-Unter Dokumente sind die [Projektdokumentation](/Dokumente/ProjektdokumentationSuterOberlin.pdf) und [Testplan, Testprotokoll](/Dokumente/Testplan.xlsx) abgelegt
+Unter Dokumente sind die [Projektdokumentation](/Dokumente/ProjektdokumentationSuterOberlin.pdf) und [Testplan, Testprotokoll](/Dokumente/Testplan.pdf) abgelegt
