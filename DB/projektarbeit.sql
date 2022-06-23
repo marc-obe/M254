@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 25. Okt 2021 um 16:19
+-- Erstellungszeit: 23. Jun 2022 um 18:58
 -- Server-Version: 10.4.21-MariaDB
 -- PHP-Version: 8.0.11
 
@@ -20,9 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Datenbank: `projektarbeit`
 --
-DROP DATABASE IF EXISTS `projektarbeit`;
-CREATE DATABASE IF NOT EXISTS `projektarbeit` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `projektarbeit`;
 
 -- --------------------------------------------------------
 
@@ -39,13 +36,6 @@ CREATE TABLE `tbl_benutzer` (
   `passwort` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Daten für Tabelle `tbl_benutzer`
---
-
-INSERT INTO `tbl_benutzer` (`id`, `vorname`, `nachname`, `eMail`, `benutzername`, `passwort`) VALUES
-(1, 'Marc', 'Oberlin', 'marc.oberlin@bbzbl-it.ch', 'MarcOb', '$2y$10$sDjz1abLHZiDAyq29ntYKOjZ0TVWxDbysLvb6BTgNIb3.OpgGj9DS');
-
 -- --------------------------------------------------------
 
 --
@@ -54,17 +44,10 @@ INSERT INTO `tbl_benutzer` (`id`, `vorname`, `nachname`, `eMail`, `benutzername`
 
 CREATE TABLE `tbl_witze` (
   `id` int(11) NOT NULL,
-  `titel` varchar(30) DEFAULT NULL,
+  `titel` varchar(50) NOT NULL,
   `inhalt` text NOT NULL,
   `benutzerId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Daten für Tabelle `tbl_witze`
---
-
-INSERT INTO `tbl_witze` (`id`, `titel`, `inhalt`, `benutzerId`) VALUES
-(2, 'Kurzwitz', 'Brennholzverleih', 1);
 
 --
 -- Indizes der exportierten Tabellen
@@ -91,13 +74,13 @@ ALTER TABLE `tbl_witze`
 -- AUTO_INCREMENT für Tabelle `tbl_benutzer`
 --
 ALTER TABLE `tbl_benutzer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT für Tabelle `tbl_witze`
 --
 ALTER TABLE `tbl_witze`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints der exportierten Tabellen
@@ -109,10 +92,6 @@ ALTER TABLE `tbl_witze`
 ALTER TABLE `tbl_witze`
   ADD CONSTRAINT `tbl_witze_ibfk_1` FOREIGN KEY (`benutzerId`) REFERENCES `tbl_benutzer` (`id`);
 COMMIT;
-
-GRANT SELECT, INSERT, UPDATE, DELETE ON *.* TO `user`@`localhost` IDENTIFIED BY PASSWORD '*3820DB1895C26747A592360B64556C6A70E99815';
-
-GRANT SELECT, INSERT, UPDATE, DELETE ON `projektarbeit`.* TO `user`@`localhost`;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

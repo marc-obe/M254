@@ -25,7 +25,7 @@ if (isset($_SESSION['loggedin']) and $_SESSION['loggedin']) {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Meine Witze</title>
+    <title>Meine Schadensfälle</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -35,7 +35,7 @@ if (isset($_SESSION['loggedin']) and $_SESSION['loggedin']) {
 
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="index.php">Projektarbeit</a>
+    <a class="navbar-brand" href="index.php">LB 3 M254</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -56,9 +56,9 @@ if (isset($_SESSION['loggedin']) and $_SESSION['loggedin']) {
     </div>
 </nav>
 <div class="container">
-    <h1>Meine Witze</h1>
+    <h1>Meine Schadensfälle</h1>
     <div>
-        <a href="witzHinzufuegen.php">Witz hinzufügen</a>
+        <a href="witzHinzufuegen.php">Schaden melden</a>
     </div>
     <?php
     $query = "SELECT id,titel, inhalt from tbl_witze where benutzerId = ?";

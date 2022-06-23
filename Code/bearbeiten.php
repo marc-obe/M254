@@ -49,12 +49,12 @@ if (isset($_GET['id']) and is_numeric($_GET['id'])) {
             //trim and sanitize
             $titel = htmlspecialchars(trim($_POST['titel']));
 
-            //mindestens 1 Zeichen und maximal 30 Zeichen lang
-            if (empty($titel) || strlen($titel) > 30) {
-                $error .= "Geben Sie bitte einen korrekten Titel ein.<br />";
+            //mindestens 1 Zeichen und maximal 50 Zeichen lang
+            if (empty($titel) || strlen($titel) > 50) {
+                $error .= "Geben Sie bitte eine korrekte Schadensart ein.(maximal 50 Zeichen)<br />";
             }
         } else {
-            $error .= "Geben Sie bitte einen Titel ein.<br />";
+            $error .= "Geben Sie bitte eine Schadensart ein.<br />";
         }
 
         // Inhalt ausgefüllt
@@ -63,11 +63,11 @@ if (isset($_GET['id']) and is_numeric($_GET['id'])) {
             $inhalt = htmlspecialchars(trim($_POST['inhalt']));
 
             //mindestens 1 Zeichen und maximal 30 Zeichen lang
-            if (empty($inhalt) || strlen($inhalt) > 30) {
-                $error .= "Geben Sie bitte einen korrekten Inhalt ein.<br />";
+            if (empty($inhalt) || strlen($inhalt) > 500) {
+                $error .= "Geben Sie bitte einen korrekten Inhalt ein. (maximal 50 Zeichen).<br />";
             }
         } else {
-            $error .= "Geben Sie bitte einen Inhalt ein.<br />";
+            $error .= "Beschreiben Sie den Vorfall bitte genauer.<br />";
         }
 // kein Fehler vorhanden?
         if (empty($error)) {
@@ -107,7 +107,7 @@ if (isset($_GET['id']) and is_numeric($_GET['id'])) {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Projektarbeit</title>
+    <title>Schadensbearbeitung</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -118,7 +118,7 @@ if (isset($_GET['id']) and is_numeric($_GET['id'])) {
 
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="index.php">Projektarbeit</a>
+    <a class="navbar-brand" href="index.php">LB 3 M254</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -133,7 +133,7 @@ if (isset($_GET['id']) and is_numeric($_GET['id'])) {
             if (isset($_SESSION['loggedin']) and $_SESSION['loggedin']) {
                 echo '<li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>';
                 echo '<li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>';
-                echo '<li class="nav-item"><a class="nav-link" href="meineWitze.php">meine Witze</a></li>';
+                echo '<li class="nav-item"><a class="nav-link" href="meineWitze.php">Meine Schadensfälle</a></li>';
             } else {
                 header('Location: index.php');
             }
@@ -142,7 +142,7 @@ if (isset($_GET['id']) and is_numeric($_GET['id'])) {
     </div>
 </nav>
 <div class="container">
-    <h1>Witz bearbeiten</h1>
+    <h1>Schaden bearbeiten</h1>
     <?php
     // Ausgabe der Fehlermeldungen
     if (!empty($error)) {
@@ -154,15 +154,15 @@ if (isset($_GET['id']) and is_numeric($_GET['id'])) {
     <form action="" method="post">
         <!-- titel -->
         <div class="form-group">
-            <label for="titel">Titel *</label>
+            <label for="titel">Schadensart *</label>
             <input type="text" name="titel" class="form-control" id="titel" value="<?php echo $titel ?>"
-                   placeholder="Geben Sie den Titel an." maxlength="30" required="true">
+                   placeholder="Was genau ist passiert? (z.B. Einbruch)" maxlength="30" required="true">
         </div>
         <!-- Inhalt -->
         <div class="form-group">
             <label for="inhalt">Inhalt *</label>
             <input type="text" name="inhalt" class="form-control" id="inhalt" value="<?php echo $inhalt ?>"
-                   placeholder="Geben Sie den Witz ein" maxlength="255" required="true">
+                   placeholder="Beschreiben Sie den Vorfall genauer" maxlength="255" required="true">
         </div>
 
         <!-- Send / Reset -->

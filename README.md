@@ -1,4 +1,4 @@
-# M151
+# M254
 ## Aufsetzen der DB
 1. MySQL starten und auf [phpMyAdmin](http://localhost/phpmyadmin/index.php) gehen
 2. Datenbank aus dem [Projektarbeit.sql](DB/projektarbeit.sql) importieren
@@ -11,8 +11,5 @@
 ### Möglichkeit 2
 1. Apache Config (httpd.conf) anpassen
    1. DocumentRoot finden 
-   2. Den Pfad für den Code Ordener angeben (z.B. "C:/Users/m-obe/IdeaProjects/M151/Code")
+   2. Den Pfad für den Code Ordener angeben (z.B. "C:/Users/m-obe/IdeaProjects/M254/Code")
 2. Apache starten
-
-## Dokumente
-Unter Dokumente sind die [Projektdokumentation](/Dokumente/ProjektdokumentationSuterOberlin.pdf) und [Testplan, Testprotokoll](/Dokumente/Testplan.pdf) abgelegt

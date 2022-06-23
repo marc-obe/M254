@@ -62,7 +62,7 @@ $password='';
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Projektarbeit</title>
+    <title>LB 3 M254</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -88,7 +88,7 @@ $password='';
             if (isset($_SESSION['loggedin']) and $_SESSION['loggedin']) {
                 echo '<li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>';
                 echo '<li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>';
-                echo '<li class="nav-item"><a class="nav-link" href="meineWitze.php">meine Witze</a></li>';
+                echo '<li class="nav-item"><a class="nav-link" href="meineWitze.php">Meine Schadensfälle</a></li>';
             } else {
                 header('Location: index.php');
             }

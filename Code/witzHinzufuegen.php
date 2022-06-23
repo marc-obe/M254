@@ -17,12 +17,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         //trim and sanitize
         $titel = htmlspecialchars(trim($_POST['titel']));
 
-        //mindestens 1 Zeichen und maximal 30 Zeichen lang
-        if (empty($titel) || strlen($titel) > 30) {
-            $error .= "Geben Sie bitte einen korrekten Titel ein.(maximal 30 Zeichen)<br />";
+        //mindestens 1 Zeichen und maximal 50 Zeichen lang
+        if (empty($titel) || strlen($titel) > 50) {
+            $error .= "Geben Sie bitte eine korrekte Schadensart ein.(maximal 50 Zeichen)<br />";
         }
     } else {
-        $error .= "Geben Sie bitte einen Titel ein.<br />";
+        $error .= "Geben Sie bitte eine Schadensart ein.<br />";
     }
 
     // Inhalt ausgefüllt?
@@ -31,11 +31,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $inhalt = htmlspecialchars(trim($_POST['inhalt']));
 
         //mindestens 1 Zeichen und maximal 30 Zeichen lang
-        if (empty($inhalt) || strlen($inhalt) > 255) {
-            $error .= "Geben Sie bitte einen korrekten Inhalt ein. (maximal 255 Zeichen)<br />";
+        if (empty($inhalt) || strlen($inhalt) > 50) {
+            $error .= "Geben Sie bitte einen korrekten Inhalt ein. (maximal 50 Zeichen)<br />";
         }
     } else {
-        $error .= "Geben Sie bitte einen Witz ein.<br />";
+        $error .= "Beschreiben Sie den Vorfall bitte genauer.<br />";
     }
 
     // wenn kein Fehler vorhanden ist, schreiben der Daten in die Datenbank
@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         // kein Fehler!
         if (empty($error)) {
-            $message .= "Der Witz wurde erfolgreich hochgeladen!<br/ >";
+            $message .= "Der Schaden wurde erfolgreich erfasst!<br/ >";
             // Felder leeren und Weiterleitung auf anderes Script: z.B. Login!
             $titel = $inhalt=  '';
             // Weiterleiten auf login.php
@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Projektarbeit</title>
+    <title>Schadenserfassung</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="index.php">Projektarbeit</a>
+    <a class="navbar-brand" href="index.php">LB 3 M254</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -105,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             if (isset($_SESSION['loggedin']) and $_SESSION['loggedin']) {
                 echo '<li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>';
                 echo '<li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>';
-                echo '<li class="nav-item"><a class="nav-link" href="meineWitze.php">meine Witze</a></li>';
+                echo '<li class="nav-item"><a class="nav-link" href="meineWitze.php">Meine Schadensfälle</a></li>';
             }else {
                 header('Location: index.php');
             }
@@ -114,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     </div>
 </nav>
 <div class="container">
-    <h1>Witz erstellen</h1>
+    <h1>Schaden erfassen</h1>
     <?php
     // Ausgabe der Fehlermeldungen
     if (!empty($error)) {
@@ -124,15 +124,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     }
     ?>
     <form action="" method="post">
-        <!-- titel -->
+        <!-- Schadenarten -->
         <div class="form-group">
-            <label for="titel">Titel *</label>
-            <input type="text" name="titel" class="form-control" id="titel" value="<?php echo $titel ?>" placeholder="Geben Sie den Titel an." maxlength="30" required="true">
+            <label for="titel">Schadensart *</label>
+            <input type="text" name="titel" class="form-control" id="titel" value="<?php echo $titel ?>" placeholder="Was genau ist passiert? (z.B. Einbruch)" maxlength="50" required="true">
         </div>
         <!-- Inhalt -->
         <div class="form-group">
             <label for="inhalt">Inhalt *</label>
-            <input type="text" name="inhalt" class="form-control" id="inhalt" value="<?php echo $inhalt ?>" placeholder="Geben Sie den Witz ein" maxlength="255" required="true">
+            <input type="text" name="inhalt" class="form-control" id="inhalt" value="<?php echo $inhalt ?>" placeholder="Beschreiben Sie den Vorfall genauer" maxlength="500" required="true">
         </div>
 
         <!-- Send / Reset -->
